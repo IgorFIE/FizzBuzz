@@ -18,14 +18,16 @@ public class FizzBuzzTest {
 
     private FizzBuzz test;
     private ByteArrayOutputStream baos;
+    private PrintStream out;
     private PrintStream old;
     private String[] array;
 
     @Before
     public void init(){
         test = new FizzBuzz();
+
         baos = new ByteArrayOutputStream();
-        PrintStream out = new PrintStream(baos);
+        out = new PrintStream(baos);
 
         old = System.out;
         System.setOut(out);
@@ -36,34 +38,46 @@ public class FizzBuzzTest {
         System.setOut(old);
 
         array = baos.toString().split("\n");
-
     }
 
     @Test
     public void fizzBuzzTest(){
-
         int count = 1;
 
         for(String s : array){
-
-            if(count % 3 == 0 && count % 5 == 0){
-                assertEquals("FizzBuzz", s);
+            if(multiplesOfThreeAndFive(count,s)){
                 count++;
                 continue;
             }
 
-            if(count % 3 == 0) assertEquals("Fizz", s);
-            if(count % 5 == 0) assertEquals("Buzz", s);
+            multiplesOfThree(count,s);
+            multiplesOfFive(count,s);
 
             count++;
         }
+    }
 
+    private boolean multiplesOfThreeAndFive(int count, String s){
+        if(count % 3 == 0 && count % 5 == 0) {
+            assertEquals("FizzBuzz", s);
+            return true;
+        }
+        return false;
+    }
+
+    private void multiplesOfThree(int count,String s){
+        if(count % 3 == 0) assertEquals("Fizz", s);
+    }
+
+    private void multiplesOfFive(int count,String s){
+        if(count % 5 == 0) assertEquals("Buzz", s);
     }
 
     @After
     public void close(){
         try {
             baos.close();
+            out.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
