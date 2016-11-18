@@ -5,6 +5,14 @@ package FizzBuzz;
  */
 public class FizzBuzz {
 
+    /**
+     * Print number from 1 to a respective number
+     * numbers multiples of three it will print "Fizz"
+     * numbers multiples of five it will print "Buzz"
+     * numbers multiples of both three and five it will print "FizzBuzz"
+     *
+     * @param n number that the method will stop printing
+     */
     public void fizzBuzz(int n){
 
         for(int x = 1; x <= n; x++){
