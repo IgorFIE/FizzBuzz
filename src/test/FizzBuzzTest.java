@@ -1,7 +1,7 @@
 package test;
 
 
-import FizzBuzz.FizzBuzz;
+import main.FizzBuzz;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,10 +21,10 @@ public class FizzBuzzTest {
     private PrintStream out;
     private PrintStream old;
     private String[] array;
-    
+
 
     /**
-     * Instantiate the FizzBuzz class for the test
+     * Instantiate the main class for the test
      * Instantiate the printStream with a ByteArrayOutputStream to collect the output
      * Save the old System out and set a the new one to collect
      *

@@ -1,4 +1,4 @@
-package FizzBuzz;
+package main;
 
 /**
  * Created by pacifist on 18-11-2016.
@@ -9,7 +9,7 @@ public class FizzBuzz {
      * Print number from 1 to a respective number
      * numbers multiples of three it will print "Fizz"
      * numbers multiples of five it will print "Buzz"
-     * numbers multiples of both three and five it will print "FizzBuzz"
+     * numbers multiples of both three and five it will print "main"
      *
      * @param n number that the method will stop printing
      */
