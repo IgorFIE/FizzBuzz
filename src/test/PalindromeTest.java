@@ -19,33 +19,28 @@ public class PalindromeTest {
     }
 
     @Test
-    public void trueTest(){
-        assertEquals(true,pali.isPalindrome("mannam"));
+    public void nullTest(){
+        assertEquals(false,pali.isPalindrome(null));
     }
 
     @Test
-    public void trueTest2(){
-        assertEquals(true,pali.isPalindrome("manam"));
-    }
-
-    @Test
-    public void trueTest3(){
-        assertEquals(true,pali.isPalindrome("JeSuimanammanamiuSeJ"));
-    }
-
-    @Test
-    public void emptyTest(){
+    public void emptyStringTest(){
         assertEquals(true,pali.isPalindrome(""));
     }
 
     @Test
-    public void wrongTest(){
-        assertEquals(false,pali.isPalindrome("mnam"));
+    public void onlyOneLetterTest(){
+        assertEquals(true,pali.isPalindrome("n"));
     }
 
     @Test
-    public void nullTest(){
-        assertEquals(false,pali.isPalindrome(null));
+    public void palindromeBigWordTest(){
+        assertEquals(true,pali.isPalindrome("JeSuimanammanamiuSeJ"));
+    }
+
+    @Test
+    public void wrongPalindromeTest(){
+        assertEquals(false,pali.isPalindrome("mnam"));
     }
 
 
